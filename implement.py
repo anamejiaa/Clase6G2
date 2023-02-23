@@ -1,4 +1,5 @@
 from sistemaVet import *
+import datetime 
 
 def main():
     servicio_hospitalario = sistemaV()
@@ -9,7 +10,8 @@ def main():
                        \n3- Ver número de mascotas en el servicio 
                        \n4- Ver medicamentos que se están administrando
                        \n5- Eliminar mascota 
-                       \n6- Salir 
+                       \n6- Eliminar medicamento
+                       \n7- Salir 
                        \nUsted ingresó la opción: ''' ))
 
         if menu == 1:
@@ -21,17 +23,24 @@ def main():
                 nombre=input("Ingrese el nombre de la mascota: ")
                 tipo=input("Ingrese el tipo de mascota (felino o canino): ")
                 peso=int(input("Ingrese el peso de la mascota: "))
-                fecha=input("Ingrese la fecha de ingreso (dia/mes/año): ")
-                medicamento=Medicamento()
-                medicamento.asignarNombre(input("Ingrese nombre del medicamento: "))
-                medicamento.asignarDosis(int(input("Ingrese dosis del medicamento: ")))
+                fecha=datetime.datetime.now()
+                nm=int(input('Ingrese la cantidad de medicamentos que desea asignarle a la mascota. '))
+                list_med=[]
+                for i in range(0,nm):
+                    nombremed=(input('Nombre del medicamento: '))
+                    dosismed=int(input('Ingrese la dosis del medicamento'))
+                    medicamento=Medicamento()
+                    medicamento.asignarNombre(input("Ingrese nombre del medicamento: "))
+                    medicamento.asignarDosis(int(input("Ingrese dosis del medicamento: ")))
+                    list_med.append(medicamento)
+                
                 mas = Mascota()
                 mas.asignarNombre(nombre)
                 mas.asignarHistoria(historia)
                 mas.asignarPeso(peso)
                 mas.asignarTipo(tipo)
                 mas.asignarFecha(fecha)
-                mas.asignarMedicamento(medicamento)
+                mas.asignarLista_medicamentos(list_med)
                 servicio_hospitalario.ingresarMascota(mas)
 
             else:
@@ -67,9 +76,12 @@ def main():
                 print("No se ha podido eliminar la mascota")
 
         elif menu==6:
+            pass
+
+        elif menu==7:
             print("Usted ha salido del sistema de servicio de hospitalización...")
             break
-        
+
         else:
             print("Usted ingresó una opción no válida, intentelo nuevamente...")
 
