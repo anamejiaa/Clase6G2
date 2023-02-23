@@ -76,6 +76,10 @@ def main():
                 print("No se ha podido eliminar la mascota")
 
         elif menu==6:
+            historia=int(input('Número de historia clínica'))
+            nom_med=input('Nombre del medicamento que desea eliminar')
+            
+
             pass
 
         elif menu==7:

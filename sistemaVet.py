@@ -21,8 +21,6 @@ class Mascota:
     def ver_Medicamento(self):
         return self.__medicamento
     
-    def eliminarMedicamento(self, nommed):
-        self.medicamento.remove(nommed)
     
             
     def asignarNombre(self,n):
@@ -92,6 +90,7 @@ class sistemaV:
          
         return None
     
+    
 
     #def eliminarMedicamento(self, historia):
         
@@ -105,6 +104,18 @@ class sistemaV:
             del self.__lista_felinos[historia]
             return True
         return False 
+    
+    def eliminarMedicamento(self, historia, nommed):
+        if historia in self.__lista_caninos: 
+            a=self.__lista_caninos[historia]
+            a.self.__medicamento.remove(nommed)
+            return True
+
+        elif historia in self.__lista_felinos: 
+            a=self.__lista_felinos[historia]
+            a.self.__medicamento.remove(nommed)
+            return True
+        return False
 
 
 class Medicamento: #Está para un solo medicamento
