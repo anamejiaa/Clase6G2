@@ -21,8 +21,8 @@ class Mascota:
     def ver_Medicamento(self):
         return self.__medicamento
     
-    def eliminarMedicamento(self, med):
-        self.medicamento.remove(med)
+    def eliminarMedicamento(self, nommed):
+        self.medicamento.remove(nommed)
     
             
     def asignarNombre(self,n):

@@ -83,7 +83,7 @@ def main():
             break
 
         else:
-            print("Usted ingresó una opción no válida, intentelo nuevamente...")
+            print("Usted ingresó una opción no válida, intentelo nuevamente.")
 
 
 
